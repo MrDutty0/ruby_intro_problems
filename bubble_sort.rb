@@ -5,7 +5,7 @@ def bubble_sort(arr)
 
     1.upto(repeat_times) do |i|
       if arr[i - 1] > arr[i]
-        swap(arr, i - 1, i)
+        arr[i - 1], arr[i] = arr[i], arr[i - 1]
         last_swapped = i
       end
     end
@@ -16,11 +16,4 @@ def bubble_sort(arr)
   arr
 end
 
-def swap(arr, a_ind, b_ind)
-  tmp = arr[a_ind]
-  arr[a_ind] = arr[b_ind]
-  arr[b_ind] = tmp
-  return
-end
-
-bubble_sort([4,3,78,2,0,2]) # => [0,2,2,3,4,78]
+p bubble_sort([4,3,78,2,0,2]) # => [0,2,2,3,4,78]
